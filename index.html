@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Chat App</title>
+        <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script defer src="script.js"></script>
         <style>
             body{
                 padding:0;
@@ -12,23 +14,41 @@
                 justify-content:center;
             }
             #message-container {
-                width:80%;
-                max-width:1200px;
+                margin:auto;
+                padding:15px;
             }
-            #message-container div {
-                 background-color:#ccc;
-                 padding:5px;
+            img {
+                width:35px;
             }
-            #message-container div:nth-child(2n){
-                background-color:#fff;
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align:center;
+                color:deepskyblue;
+                font-size:30px;
+                font-weight:bold;
+            }
+            #message-input{
+                padding:15px;
+                font-size:20px;
+            }
+            #send-button{
+                border-style:none;
+                padding:16px;
+                font-size:20px;
+                background-color:deepskyblue;
+                color:#fff;
+                font-family:Arial, Helvetica, sans-serif;
+                cursor:pointer;
             }
         </style>
     </head>
     <body>
-      <div id="message-container"></div>
-      <form id="send-container">
-          <input type="text" id="message-input">
-          <button type="submit" id="send-button">Send</button>
-      </form>
+      <div id="message-container">
+            <form id="send-container">
+                <p><img src="chat.png"> Chat App</p>
+                <input type="text" id="message-input">
+                <button type="submit" id="send-button">Send</button>
+            </form>
+      </div>
     </body>
 </html>
